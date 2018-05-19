@@ -19,47 +19,15 @@
   --success-color:      #07C748;
   --alert-color:        #FF5451;
 
-  --darker-gray:        #626D7B;
-  --dark-gray:          #878F9A;
-  --gray:               #BABFC4;
-  --light-gray:         #D7DFE8;
-  --lighter-gray:       #EEF1F4;
-
-  --input-border-color: #E7EEEF;
-  --dotted-line-color:  #C8D2DB;
-
-  /* === COLOR SETTING === */
-  --text-color:         var(--darker-gray);
-
   /* === TYPOGRAPHY === */
   --font-family:      "Microsoft Jhenghei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-number:      "Lato", "Microsoft Jhenghei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-size-xxl:    36px;
-  --font-size-xl:     32px;
-  --font-size-l:      28px;
-  --font-size-m:      24px;
-  --font-size:        22px;
-  --font-size-s:      20px;
-  --font-size-xs:     18px;
-  --font-size-xxs:    16px;
-
-  /* === COMPONENT === */
-  --border-round:     150px;
-  --border-radius-l:  32px;
-  --border-radius-s:  16px;
-
-  --line-height:      2;
-  --line-height-s:    1.5;
-
-  /* === BUTTON === */
-  --btn-color: #fff;
-
 }
 /*-------------------------------------------------------
   GLOBAL STYLE RESET
 ---------------------------------------------------------*/
 * {
-  font-family: var(--font-family);
+  font-family: var(--font-number);
 }
 html {
   -webkit-box-sizing: border-box;
@@ -269,4 +237,149 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-number);
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
+}
+/*-------------------------------------------------------
+  SETTING SECTION
+---------------------------------------------------------*/
+.setting_section {
+  border-top: 4px solid var(--accent-color);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  /* font-weight: bold;
+  -webkit-font-smoothing: antialiased; */
+}
+.switch {
+  display: flex;
+  align-items: center;
+}
+.switch_toggle {
+  margin-left: 16px;
+}
+.clear_label {
+  color: #999;
+  cursor: pointer;
+}
+.clear_label:hover {
+  color: var(--main-color);
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+.switch_input {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+  display: none;
+}
+.switch_indicator {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 45px;
+	height: 24px;
+	background: #999;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+.switch_indicator:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 18px;
+	height: 18px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+.switch_input:checked + label {
+	background: var(--main-color);
+}
+.switch_input:checked + label:after {
+	left: calc(100% - 3px);
+	transform: translateX(-100%);
+}
+/* .switch_indicator:active:after {
+	width: 130px;
+} */
+/*-------------------------------------------------------
+  TABLE
+---------------------------------------------------------*/
+.table_section {
+  display: flex;
+  justify-content: center;
+}
+.table {
+  width: 100%;
+  max-width: 736px;
+  border-collapse: collapse;
+}
+.tbody {
+  border-top: 1px solid #eee;
+}
+.tr {
+  border-bottom: 1px solid #eee;
+}
+.tr td:first-of-type {
+  width: 17%;
+}
+.tr td:nth-of-type(2n) {
+  width: 232px;
+}
+.tr td:nth-of-type(3n) {
+
+}
+.tr td:nth-of-type(4n) {
+  width: 176px;
+}
+.tr td:last-of-type {
+  width: 32px;
+}
+.table .product_img {
+  width: 100px;
+  height: 100px;
+  margin: 24px 0;
+  padding: 8px;
+}
+.table .products_title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.table .products_data {
+  font-size: 14px;
+  margin: 0;
+}
+.table .product_price {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.table .product_track_price {
+  font-size: 14px;
+  font-family: var(--font-number);
+  color: #999;
+}
+.table .product_add {
+  color: var(--main-color);
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+.table .product_add:hover {
+  color: #06a93d;
+}
+.delete_icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.delete_icon_fill {
+  fill: #d8d8d8;
+}
+.delete_icon:hover .delete_icon_fill {
+  fill: #999;
 }
