@@ -4,8 +4,6 @@
 
 'use strict';
 
-// let Utility = require('../../models/common/utility');
-
 chrome.tabs.getSelected(null, function(tab) {
     // console.log(tab.url);
     let uri = Utility.Uri.parse(document, tab.url);

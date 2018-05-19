@@ -1,4 +1,42 @@
-let Utility = {};
+let Utility = class {
+    constructor() {
+
+    }
+
+    static get_random_token() {
+        let random_pool = new Uint8Array(32);
+        crypto.getRandomValues(random_pool);
+        let hex = '';
+        for (let i = 0; i < random_pool.length; ++i) {
+            hex += random_pool[i].toString(16);
+        }
+        // E.g. db18458e2782b2b77e36769c569e263a53885a9944dd0a861e5064eac16f1a
+        return hex;
+    }
+
+    static request(options, callback) {
+        // console.log(options);
+        let xhr    = new XMLHttpRequest();
+        let method = options.method ? options.method.toUpperCase() : 'GET';
+        let async  = options.async  ? options.async : true;
+
+        xhr.onload = function() {
+            callback(xhr.responseText);
+        };
+        // xhr.onerror = function() {
+        //     // Do whatever you want on error. Don't forget to invoke the
+        //     // callback to clean up the communication port.
+        //     callback();
+        // };
+        xhr.open(method, options.url, async);
+        if ('POST' === method) {
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        }
+        xhr.send(options.data);
+
+        return true;
+    }
+};
 
 
 Utility.Uri = class {
