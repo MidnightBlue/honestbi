@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: competitors
+#
+#  id                    :integer          not null, primary key
+#  name                  :string
+#  protocol              :string
+#  host                  :string
+#  product_path_patterns :text
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+pchome:
+  name: '24h Pchome'
+  protocol: 'https'
+  host: '24h.pchome.com.tw'
+  product_path_patterns: '/prod/'
+
+momoshop:
+  name: 'momo Shop'
+  protocol: 'https'
+  host: 'www.momoshop.com.tw'
+  product_path_patterns: '/goods/GoodsDetail.jsp'
