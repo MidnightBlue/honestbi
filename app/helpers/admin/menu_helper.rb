@@ -16,6 +16,7 @@ module Admin::MenuHelper
     }
     menu = build_menu_item(menu, Competitor.model_name.human, Competitor.icon, send("#{SpreeeedEngine.namespace}_#{Competitor.model_name.plural}_path"))
     menu = build_menu_item(menu, Competitor::Product.model_name.human, Competitor::Product.icon, send("#{SpreeeedEngine.namespace}_#{Competitor::Product.model_name.plural}_path"))
+    menu = build_menu_item(menu, Competitor::Product::PageView.model_name.human, Competitor::Product::PageView.icon, send("#{SpreeeedEngine.namespace}_#{Competitor::Product::PageView.model_name.plural}_path"))
 
     menu = build_menu_item(menu, t('menus.sign_out'), 'fas fa-sign-out-alt', destroy_user_session_path)
 

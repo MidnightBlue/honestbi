@@ -1,0 +1,16 @@
+---
+zh-TW:
+  activerecord:
+    models:
+      competitor/product/page_view: 追蹤紀錄
+    attributes:
+      competitor/product/page_view:
+        id: id
+        product_id: 商品
+        product: 商品
+        uuid: 裝置
+        name: 名稱
+        price: 價格
+        quantity: 數量
+        created_at: 建立時間
+        updated_at: 更新時間

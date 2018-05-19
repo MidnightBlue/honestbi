@@ -2,13 +2,14 @@
 #
 # Table name: competitor_products
 #
-#  id            :integer          not null, primary key
-#  competitor_id :integer
-#  name          :string
-#  size          :string
-#  url           :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id                 :integer          not null, primary key
+#  mapping_product_id :integer
+#  competitor_id      :integer
+#  name               :string
+#  size               :string
+#  url                :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
 #
 
 require 'test_helper'

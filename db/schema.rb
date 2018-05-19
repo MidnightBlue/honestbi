@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2018_05_19_181528) do
   end
 
   create_table "competitor_products", force: :cascade do |t|
+    t.integer "mapping_product_id"
     t.integer "competitor_id"
     t.string "name"
     t.string "size"
