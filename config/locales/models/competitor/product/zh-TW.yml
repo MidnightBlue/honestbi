@@ -1,0 +1,15 @@
+---
+zh-TW:
+  activerecord:
+    models:
+      competitor/product: 追蹤商品
+    attributes:
+      competitor/product:
+        id: id
+        competitor: 追蹤平台
+        competitor_id: 追蹤平台
+        name: 名稱
+        size: 尺寸
+        url: 網址
+        created_at: 建立時間
+        updated_at: 修改時間

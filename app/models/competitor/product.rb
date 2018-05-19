@@ -14,4 +14,8 @@
 class Competitor::Product < ApplicationRecord
   belongs_to :competitor
   has_many   :page_views, class_name: 'Competitor::Product::PageView', foreign_key: 'product_id', dependent: :destroy
+
+  include SpreeeedEngine::Models::Competitor::Product
+  include SpreeeedEngine::Datatables::Competitor::Product
+
 end

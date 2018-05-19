@@ -32,7 +32,7 @@ class CreateCompetitorProducts < ActiveRecord::Migration[5.2]
       url:  'https://www.momoshop.com.tw/goods/GoodsDetail.jsp?mdiv=ghostShopCart&i_code=4505323'
     })
     Competitor::Product.create({
-      competitor_id: Competitor.find_by_name('24h Pchome').id,
+      competitor_id: Competitor.find_by_name('momo Shop').id,
       name: '蘋果西打',
       size: '2000ml',
       url:  'https://www.momoshop.com.tw/goods/GoodsDetail.jsp?mdiv=ghostShopCart&i_code=2638259'
