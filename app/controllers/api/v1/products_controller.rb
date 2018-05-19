@@ -1,4 +1,4 @@
-class Api::V1::ProductsController < ApplicationController
+class Api::V1::ProductsController < Api::ApplicationController
 
   def show
 
