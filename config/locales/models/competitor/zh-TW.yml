@@ -1,0 +1,15 @@
+---
+zh-TW:
+  activerecord:
+    models:
+      competitor: 追蹤平台
+    attributes:
+      competitor:
+        id: id
+        name: 名稱
+        protocol: protocol
+        host: host
+        product_path_patterns: product path patterns
+        product_url_pattern: product url pattern
+        created_at: 建立時間
+        updated_at: 更新時間

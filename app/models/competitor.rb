@@ -14,4 +14,7 @@
 
 class Competitor < ApplicationRecord
   scope :traceable, -> {}
+
+  include SpreeeedEngine::Models::Competitor
+  include SpreeeedEngine::Datatables::Competitor
 end

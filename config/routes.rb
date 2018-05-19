@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   draw :api_routes
   draw :sidekiq_routes
 
-  root 'admin/home#index'
+  root 'admin/competitors#index'
 
 end
