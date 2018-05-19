@@ -26,31 +26,35 @@ api.competitors(function (response) {
 
 
 chrome.runtime.onInstalled.addListener(function() {
-    chrome.runtime.onMessage.addListener(function(request, sender, callback) {
-        if ('xhttp' === request.action) {
-            let xhttp = new XMLHttpRequest();
-            let method = request.method ? request.method.toUpperCase() : 'GET';
-
-            xhttp.onload = function() {
-                callback(xhttp.responseText);
-            };
-            xhttp.onerror = function() {
-                // Do whatever you want on error. Don't forget to invoke the
-                // callback to clean up the communication port.
-                callback();
-            };
-            xhttp.open(method, request.url, true);
-            if ('POST' === method) {
-                xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            }
-            xhttp.send(request.data);
-            return true; // prevents the callback from being called too early on return
+    chrome.runtime.onMessage.addListener(function (msg, sender) {
+        // First, validate the message's structure
+        if ((msg.from === 'content') && (msg.subject === 'showPageAction')) {
+            // Enable the page-action for the requesting tab
+            chrome.pageAction.show(sender.tab.id);
+            console.log(sender.tab.id);
         }
     });
-
-    chrome.storage.sync.set({color: '#3aa757'}, function() {
-        // console.log('The color is green.');
-    });
+    // chrome.runtime.onMessage.addListener(function(request, sender, callback) {
+    //     if ('xhttp' === request.action) {
+    //         let xhttp = new XMLHttpRequest();
+    //         let method = request.method ? request.method.toUpperCase() : 'GET';
+    //
+    //         xhttp.onload = function() {
+    //             callback(xhttp.responseText);
+    //         };
+    //         xhttp.onerror = function() {
+    //             // Do whatever you want on error. Don't forget to invoke the
+    //             // callback to clean up the communication port.
+    //             callback();
+    //         };
+    //         xhttp.open(method, request.url, true);
+    //         if ('POST' === method) {
+    //             xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    //         }
+    //         xhttp.send(request.data);
+    //         return true; // prevents the callback from being called too early on return
+    //     }
+    // });
 
     chrome.storage.sync.get('user_uuid', function(items) {
         let user_uuid = items.user_uuid;

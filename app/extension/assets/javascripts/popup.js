@@ -4,41 +4,27 @@
 
 'use strict';
 
-chrome.tabs.getSelected(null, function(tab) {
-    // console.log(tab.url);
-    let uri = Utility.Uri.parse(document, tab.url);
-    // console.log(uri);
+function setDOMInfo(info) {
+    document.getElementById('name').textContent = info.name;
+    document.getElementById('size').textContent = info.size;
+    document.getElementById('price').textContent        = 'NT $' + info.honestbee_price;
+    let difference = info.price - info.honestbee_price;
+    document.getElementById('difference').textContent   = '(節省' +  difference+ ' 元)';
+    document.getElementById('image_url').src = info.image_url;
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+    // ...query for the active tab...
+    chrome.tabs.query({
+        active: true,
+        currentWindow: true
+    }, function (tabs) {
+        // ...and send a request for the DOM info...
+        chrome.tabs.sendMessage(
+            tabs[0].id,
+            {from: 'popup', subject: 'DOMInfo'},
+            // ...also specifying a callback to be called
+            //    from the receiving end (content script)
+            setDOMInfo);
+    });
 });
-
-
-chrome.runtime.sendMessage({
-    method: 'GET',
-    action: 'xhttp',
-    url: 'http://localhost:3000/api/v1/competitors',
-    data: ''
-}, function(responseText) {
-    console.log(responseText);
-    /*Callback function to deal with the response*/
-});
-
-
-
-
-
-
-
-let changeColor = document.getElementById('changeColor');
-
-chrome.storage.sync.get('color', function(data) {
-  changeColor.style.backgroundColor = data.color;
-  changeColor.setAttribute('value', data.color);
-});
-
-changeColor.onclick = function(element) {
-  let color = element.target.value;
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.executeScript(
-        tabs[0].id,
-        {code: 'document.body.style.backgroundColor = "' + color + '";'});
-  });
-};

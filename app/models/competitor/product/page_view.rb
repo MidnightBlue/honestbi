@@ -24,9 +24,11 @@ class Competitor::Product::PageView < ApplicationRecord
 
     case to
     when :mapping_product
-      if product.honestbee_product.price != price
-        result[:difference][:price] = price - product.honestbee_product.price
-      end
+      result[:difference][:name]            = product.honestbee_product.title
+      result[:difference][:image_url]       = product.honestbee_product.image_url
+      result[:difference][:size]            = product.honestbee_product.size
+      result[:difference][:honestbee_price] = product.honestbee_product.price
+      result[:difference][:price]           = price
     when :last_page_view
       last_page_view = product.page_views.where('id < ?', id).first
 

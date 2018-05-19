@@ -22,18 +22,18 @@
     </section>
     <!-- 更便宜時顯示 end -->
     <!-- 更貴時顯示 start -->
-    <section class="price_alert is-expensive">
+    <section class="price_alert is-expensive" style="display: none">
       哭哭！小蜜蜂發現的蘋果西打好貴
     </section>
     <!-- 更貴時顯示 end -->
     <main class="main_product">
       <section class="product_img">
-        <img src="https://assets.honestbee.com/products/images/480/cf_cf0000565_cf0000565-1.jpg" alt="">
+        <img id="image_url" src="" alt="">
       </section>
       <section class="product_description">
-        <h1 class="products_title">蘋果西打</h1>
-        <span class="products_data">2000毫升</span>
-        <h2 class="product_price">NT$42<span>(節省13元)</span></h2>
+        <h1 class="products_title" id="name"></h1>
+        <span class="products_data" id="size"></span>
+        <h2 class="product_price"><span id="price"></span><span id="difference"></span></h2>
         <button type="button" class="btn">加入購物車</button>
         <div class="feature_group">
           <a class="" href="">加入追蹤清單</a>
@@ -82,7 +82,7 @@
         </ul>
       </section>
     </footer>
-    <script src="models/common/utility.js"></script>
-    <script src="assets/scripts/popup.js"></script>
+    <script src="lib/utility.js"></script>
+    <script src="assets/javascripts/popup.js"></script>
   </body>
 </html>
