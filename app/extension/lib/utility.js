@@ -15,6 +15,7 @@ let Utility = class {
     }
 
     static request(options, callback) {
+        console.log(options);
         let xhr    = new XMLHttpRequest();
         let method = options.method ? options.method.toUpperCase() : 'GET';
 
@@ -39,7 +40,9 @@ let Utility = class {
         if ('POST' === method) {
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         }
-        xhr.timeout = 5000;
+        if (false === async) {
+            xhr.timeout = 5000;
+        }
         xhr.send(options.data);
 
         return true;
