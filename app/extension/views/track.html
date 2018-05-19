@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="../" />
+    <link rel="stylesheet" href="assets/stylesheets/vendor/normalize.min.css">
+    <link rel="stylesheet" href="assets/stylesheets/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <img class="logo" src="assets/images/logo/logo.png" alt="">
+      <div class="tab_group">
+        <a class="tab_title" href="views/popup.html">發現好物</a>
+        <a class="tab_title is-active" href="views/track.html">追蹤清單</a>
+      </div>
+    </header>
+    <section class="setting_section">
+      <div class="switch">
+        <span class="switch_label">商品更便宜時通知我</span>
+        <div class="switch_toggle">
+          <input class="switch_input" type="checkbox" id="switch" checked />
+          <label class="switch_indicator" for="switch">Toggle</label>
+        </div>
+      </div>
+      <span class="clear_label">清空已追蹤的商品</span>
+    </section>
+    <main class="table_section">
+      <table class="table">
+        <tbody class="tbody">
+          <tr class="tr">
+            <td>
+              <section class="product_img">
+                <img src="https://assets.honestbee.com/products/images/480/cf_cf0000565_cf0000565-1.jpg" alt="">
+              </section>
+            </td>
+            <td>
+              <h1 class="products_title">蘋果西打</h1>
+              <span class="products_data">2000毫升</span>
+            </td>
+            <td>
+              <h2 class="product_price">NT$42</h2>
+              <span class="product_track_price">追蹤時NT$42</span>
+            </td>
+            <td>
+              <a class="product_add">+加入購物車</a>
+            </td>
+            <td>
+              <span class="delete_icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                  <g class="delete_icon_fill" fill-rule="evenodd" transform="rotate(-45 6.586 11.414)">
+                    <rect width="2.069" height="20" x="8.966" rx="1.034"/>
+                    <rect width="2.069" height="20" x="8.966" rx="1.034" transform="rotate(90 10 10)"/>
+                  </g>
+                </svg>
+              </span>
+            </td>
+          </tr>
+          <tr class="tr">
+            <td>
+              <section class="product_img">
+                <img src="https://assets.honestbee.com/products/images/480/cf_cf0000565_cf0000565-1.jpg" alt="">
+              </section>
+            </td>
+            <td>
+              <h1 class="products_title">蘋果西打</h1>
+              <span class="products_data">2000毫升</span>
+            </td>
+            <td>
+              <h2 class="product_price">NT$42</h2>
+              <span class="product_track_price">追蹤時NT$42</span>
+            </td>
+            <td>
+              <a class="product_add">+加入購物車</a>
+            </td>
+            <td>
+              <span class="delete_icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                  <g class="delete_icon_fill" fill-rule="evenodd" transform="rotate(-45 6.586 11.414)">
+                    <rect width="2.069" height="20" x="8.966" rx="1.034"/>
+                    <rect width="2.069" height="20" x="8.966" rx="1.034" transform="rotate(90 10 10)"/>
+                  </g>
+                </svg>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <script src="models/common/utility.js"></script>
+    <script src="assets/scripts/popup.js"></script>
+  </body>
+</html>
