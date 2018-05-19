@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_19_034033) do
+ActiveRecord::Schema.define(version: 2018_05_19_095624) do
+
+  create_table "competitor_page_views", force: :cascade do |t|
+    t.string "user_uuid"
+    t.string "product_path"
+    t.string "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "competitors", force: :cascade do |t|
     t.string "name"
