@@ -43,6 +43,7 @@ GIT
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     aasm (4.12.3)
       concurrent-ruby (~> 1.0)
