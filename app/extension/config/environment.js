@@ -24,4 +24,14 @@ Environment.ApiServer = class {
         };
         return Utility.request(options, callback);
     }
+
+    log_page_view(uuid, path, callback) {
+        let options = {
+            method: 'POST',
+            url:    this.url_for('/page_views'),
+            async:  false,
+            data: 'uuid=' + uuid + '&path=' + path
+        };
+        return Utility.request(options, callback);
+    }
 };

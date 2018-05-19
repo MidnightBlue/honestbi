@@ -11,7 +11,12 @@
   ],
   "options_page": "views/options.html",
   "background": {
-    "scripts": ["config/development.js", "models/common/utility.js", "config/environment.js", "assets/scripts/background.js"],
+    "scripts": [
+      "config/development.js",
+      "models/common/utility.js",
+      "config/environment.js",
+      "assets/scripts/background.js"
+    ],
     "persistent": false
   },
   "page_action": {
@@ -25,8 +30,17 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://24h.pchome.com.tw/prod/*", "http://localhost:3000/*"],
-      "js": ["assets/scripts/content_scripts.js"]
+      "matches": [
+        "https://24h.pchome.com.tw/prod/*",
+        "http://localhost:3000/*"
+      ],
+      "js": [
+        "config/development.js",
+        "models/common/utility.js",
+        "config/environment.js",
+        "assets/scripts/content_scripts.js"
+      ],
+      "run_at": "document_end"
     }
   ],
   "icons": {
