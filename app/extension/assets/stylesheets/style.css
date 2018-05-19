@@ -140,10 +140,8 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
   color: var(--accent-color);
 }
-.cheaper_alert {
-  background: var(--accent-color) url("../images/logo/bee.png") no-repeat;
-  background-size: 88px 60px;
-  background-position: right 24px bottom;
+.price_alert {
+  background: var(--accent-color);
   color: rgba(0, 0, 0, 0.8);
   font-size: 20px;
   height: 60px;
@@ -152,6 +150,16 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
+}
+.price_alert.is-cheap {
+  background: var(--accent-color) url("../images/logo/bee.png") no-repeat;
+  background-size: 88px 60px;
+  background-position: right 24px bottom;
+}
+.price_alert.is-expensive {
+  background: var(--accent-color) url("../images/logo/bee_cry.png") no-repeat;
+  background-size: 105px 60px;
+  background-position: right 24px bottom;
 }
 /*-------------------------------------------------------
   MAIN
