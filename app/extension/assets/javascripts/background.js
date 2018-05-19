@@ -8,11 +8,7 @@
 let api = new Environment.ApiServer(config);
 // console.log(api);
 
-let conditions = [
-    new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: {hostEquals: 'localhost', pathContains: '/'}
-    })
-];
+let conditions = [];
 
 api.competitors(function (response) {
     let competitors = JSON.parse(response);
@@ -22,8 +18,9 @@ api.competitors(function (response) {
             pageUrl: {hostEquals: competitor.host, pathContains: competitor.product_path_patterns}
         }));
     }
+    // console.log('wait' + conditions);
 });
-// console.log(conditions);
+// console.log('no wait' + conditions);
 
 
 
@@ -52,7 +49,7 @@ chrome.runtime.onInstalled.addListener(function() {
     });
 
     chrome.storage.sync.set({color: '#3aa757'}, function() {
-        console.log('The color is green.');
+        // console.log('The color is green.');
     });
 
     chrome.storage.sync.get('user_uuid', function(items) {

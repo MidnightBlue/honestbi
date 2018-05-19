@@ -15,10 +15,17 @@ let Utility = class {
     }
 
     static request(options, callback) {
-        // console.log(options);
         let xhr    = new XMLHttpRequest();
         let method = options.method ? options.method.toUpperCase() : 'GET';
-        let async  = options.async  ? options.async : true;
+
+        let async  = true;
+        if ('boolean' === typeof options.async) {
+            async  = options.async;
+        }
+
+        xhr.ontimeout = function () {
+            console.error("The request for " + options.url + " timed out.");
+        };
 
         xhr.onload = function() {
             callback(xhr.responseText);
@@ -32,6 +39,7 @@ let Utility = class {
         if ('POST' === method) {
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         }
+        xhr.timeout = 5000;
         xhr.send(options.data);
 
         return true;

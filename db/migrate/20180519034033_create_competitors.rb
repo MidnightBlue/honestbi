@@ -23,5 +23,11 @@ class CreateCompetitors < ActiveRecord::Migration[5.2]
       host:                  'www.momoshop.com.tw',
       product_path_patterns: '/goods/GoodsDetail.jsp'
     })
+    Competitor.create({
+      name:                  'localhost',
+      protocol:              'http',
+      host:                  'localhost',
+      product_path_patterns: '/'
+    })
   end
 end

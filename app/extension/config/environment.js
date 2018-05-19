@@ -20,7 +20,7 @@ Environment.ApiServer = class {
         let options = {
             method: 'GET',
             url:    this.url_for('/competitors'),
-            async:  false
+            async:  true
         };
         return Utility.request(options, callback);
     }

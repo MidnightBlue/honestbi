@@ -1,7 +1,7 @@
 {
-  "name": "Getting Started Example",
+  "name": "Honestbi",
   "version": "1.0",
-  "description": "Build an Extension!",
+  "description": "The Challenges From Honestbee CTO",
   "permissions": [
     "tabs",
     "activeTab",
@@ -12,10 +12,10 @@
   "options_page": "views/options.html",
   "background": {
     "scripts": [
+      "lib/utility.js",
       "config/development.js",
-      "models/common/utility.js",
       "config/environment.js",
-      "assets/scripts/background.js"
+      "assets/javascripts/background.js"
     ],
     "persistent": false
   },
@@ -35,10 +35,11 @@
         "http://localhost:3000/*"
       ],
       "js": [
+        "lib/jquery-3.3.1.min.js",
+        "lib/utility.js",
         "config/development.js",
-        "models/common/utility.js",
         "config/environment.js",
-        "assets/scripts/content_scripts.js"
+        "assets/javascripts/content_scripts.js"
       ],
       "run_at": "document_end"
     }
