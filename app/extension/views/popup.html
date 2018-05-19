@@ -1,19 +1,87 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <base href="../" />
     <link rel="stylesheet" href="assets/stylesheets/vendor/normalize.min.css">
     <link rel="stylesheet" href="assets/stylesheets/style.css">
-    <style>
+    <!-- <style>
       button {
         height: 30px;
         width: 30px;
         outline: none;
       }
-    </style>
+    </style> -->
   </head>
   <body>
-    <button id="changeColor"></button>
+    <header class="header">
+      <img class="logo" src="assets/images/logo/logo.png" alt="">
+      <div class="tab_group">
+        <a class="tab_title is-active" href="views/popup.html">發現好物</a>
+        <a class="tab_title" href="views/track.html">追蹤清單</a>
+      </div>
+    </header>
+    <section class="cheaper_alert">
+      小蜜蜂發現了更便宜的蘋果西打！
+    </section>
+    <main class="main_product">
+      <section class="product_img">
+        <img src="https://assets.honestbee.com/products/images/480/cf_cf0000565_cf0000565-1.jpg" alt="">
+      </section>
+      <section class="product_description">
+        <h1 class="products_title">蘋果西打</h1>
+        <span class="products_data">2000豪升</span>
+        <h2 class="product_price">NT$42<span>(節省13元)</span></h2>
+        <button type="button" class="btn">加入購物車</button>
+        <div class="feature_group">
+          <a class="" href="">加入追蹤清單</a>
+          <span class="divider">|</span>
+          <a class="" href="">回報商品</a>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <section class="suggest_section">
+        <h2 class="suggest_header">一起買</h2>
+        <ul class="suggest_list">
+          <li class="suggest_product">
+            <div class="suggest_img">
+              <img src="https://assets.honestbee.com/products/images/480/cf_cf0003458_cf0003458-1.jpg" alt="">
+            </div>
+            <span class="suggest_title">模範生 點心條餅 - 雞汁</span>
+            <span class="suggest_price">NT$64</span>
+          </li>
+          <li class="suggest_product">
+            <div class="suggest_img">
+              <img src="https://assets.honestbee.com/products/images/480/cf_cf0003562_cf0003562-1.jpg" alt="">
+            </div>
+            <span class="suggest_title">中祥 自然之顏麥穗蘇打餅量販包</span>
+            <span class="suggest_price">NT$92</span>
+          </li>
+        </ul>
+      </section>
+      <section class="suggest_section">
+        <h2 class="suggest_header">蜂推薦</h2>
+        <ul class="suggest_list">
+          <li class="suggest_product">
+            <div class="suggest_img">
+              <img src="https://assets.honestbee.com/products/images/480/cf_cf0000580_cf0000580-1.jpg" alt="">
+            </div>
+            <span class="suggest_title">可口可樂 (2000 ml)</span>
+            <span class="suggest_price">NT$40</span>
+          </li>
+          <li class="suggest_product">
+            <div class="suggest_img">
+              <img src="https://assets.honestbee.com/products/images/480/cf_cf0000577_cf0000577-1.jpg" alt="">
+            </div>
+            <span class="suggest_title">黑松沙士</span>
+            <span class="suggest_price">NT$49</span>
+          </li>
+        </ul>
+      </section>
+    </footer>
     <script src="models/common/utility.js"></script>
     <script src="assets/scripts/popup.js"></script>
   </body>
