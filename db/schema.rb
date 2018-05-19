@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2018_05_19_095624) do
     t.string "protocol"
     t.string "host"
     t.text "product_path_patterns"
+    t.text "product_url_pattern"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

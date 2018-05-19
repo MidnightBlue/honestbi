@@ -1,4 +1,4 @@
-// window.onload = function() {
+window.onload = function() {
     let api = new Environment.ApiServer(config);
 
     let user_uuid;
@@ -9,11 +9,20 @@
         });
     });
 
-    let name = document.evaluate('//*[@id="NickContainer"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    console.log(name);
+const timer = setInterval(() => {
+    const myElement = document.getElementById('NickContainer');
+    if(myElement) {
+        clearTimeout(timer);
+        console.log(myElement);
+        // processMyElement(myElement);
+    }
+}, 150);
 
-    let price = document.evaluate('//*[@id="PriceTotal"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    console.log(price);
+    // let name = document.evaluate('//*[@id="NickContainer"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    // console.log(name);
+    //
+    // let price = document.evaluate('//*[@id="PriceTotal"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    // console.log(price);
 
     // chrome.runtime.sendMessage({
     //     method: 'GET',
@@ -26,4 +35,4 @@
     // });
 
     // document.write('Hello world');
-// };
+};

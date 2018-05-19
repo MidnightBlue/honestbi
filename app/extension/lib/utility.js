@@ -40,7 +40,7 @@ let Utility = class {
         if ('POST' === method) {
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         }
-        if (false === async) {
+        if (true === async) {
             xhr.timeout = 5000;
         }
         xhr.send(options.data);

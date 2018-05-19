@@ -20,7 +20,7 @@ Environment.ApiServer = class {
         let options = {
             method: 'GET',
             url:    this.url_for('/competitors'),
-            async:  true
+            async:  false
         };
         return Utility.request(options, callback);
     }
@@ -29,7 +29,7 @@ Environment.ApiServer = class {
         let options = {
             method: 'POST',
             url:    this.url_for('/page_views'),
-            async:  false,
+            async:  true,
             data: 'uuid=' + uuid + '&path=' + path
         };
         return Utility.request(options, callback);
