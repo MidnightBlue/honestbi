@@ -36,6 +36,12 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Brings back `assigns` and `assert_template` to your Rails tests
+gem 'rails-controller-testing'
+
+# The solution to keep your Rails ActiveRecord migrations up to date
+gem 'migration_data'
+
 # Spreeeed custom backend engine
 gem 'spreeeed_engine', :git => 'https://github.com/MidnightBlue/spreeeed_engine.git'
 

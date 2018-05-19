@@ -4,6 +4,29 @@
 
 'use strict';
 
+chrome.tabs.getSelected(null, function(tab) {
+    // console.log(tab.url);
+    let uri = Utility.Uri.parse(document, tab.url);
+    // console.log(uri);
+});
+
+
+chrome.runtime.sendMessage({
+    method: 'GET',
+    action: 'xhttp',
+    url: 'http://localhost:3000/api/v1/competitors',
+    data: ''
+}, function(responseText) {
+    console.log(responseText);
+    /*Callback function to deal with the response*/
+});
+
+
+
+
+
+
+
 let changeColor = document.getElementById('changeColor');
 
 chrome.storage.sync.get('color', function(data) {
