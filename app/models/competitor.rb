@@ -15,6 +15,8 @@
 class Competitor < ApplicationRecord
   scope :traceable, -> {}
 
+  has_many :products, class_name: 'Competitor::Product', dependent: :destroy
+
   include SpreeeedEngine::Models::Competitor
   include SpreeeedEngine::Datatables::Competitor
 end

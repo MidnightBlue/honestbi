@@ -3,6 +3,7 @@
 # Table name: competitor_product_page_views
 #
 #  id         :integer          not null, primary key
+#  product_id :integer
 #  uuid       :string
 #  name       :string
 #  price      :integer
