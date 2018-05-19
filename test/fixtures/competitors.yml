@@ -7,6 +7,7 @@
 #  protocol              :string
 #  host                  :string
 #  product_path_patterns :text
+#  product_url_pattern   :text
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
 #

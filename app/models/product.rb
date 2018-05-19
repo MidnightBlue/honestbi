@@ -16,4 +16,19 @@
 #
 
 class Product < ApplicationRecord
+  searchkick
+
+  def should_index?
+    true
+  end
+
+  def search_data
+    {
+        title: title,
+        price: price,
+        size: size
+    }
+  end
+
+
 end

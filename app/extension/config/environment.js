@@ -25,12 +25,18 @@ Environment.ApiServer = class {
         return Utility.request(options, callback);
     }
 
-    log_page_view(uuid, path, callback) {
+    log_page_view(data, callback) {
+        let params = [];
+        for (let k in data){
+            if (data.hasOwnProperty(k)) {
+                params.push(k + '=' + data[k]);
+            }
+        }
         let options = {
             method: 'POST',
             url:    this.url_for('/page_views'),
             async:  true,
-            data: 'uuid=' + uuid + '&path=' + path
+            data:   params.join('&')
         };
         return Utility.request(options, callback);
     }

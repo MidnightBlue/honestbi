@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_19_095624) do
+ActiveRecord::Schema.define(version: 2018_05_19_181528) do
 
-  create_table "competitor_page_views", force: :cascade do |t|
-    t.string "user_uuid"
-    t.string "product_path"
-    t.string "product_id"
+  create_table "competitor_product_page_views", force: :cascade do |t|
+    t.string "uuid"
+    t.string "name"
+    t.integer "price"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "competitor_products", force: :cascade do |t|
+    t.integer "competitor_id"
+    t.string "name"
+    t.string "size"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
