@@ -40,5 +40,15 @@ class CreateCompetitorProducts < ActiveRecord::Migration[5.2]
       size: '2000ml',
       url:  'https://www.momoshop.com.tw/goods/GoodsDetail.jsp?mdiv=ghostShopCart&i_code=2638259'
     })
+
+    Competitor::Product.create!({
+      mapping_product_id: 2966615,
+      competitor_id: Competitor.find_by_name('24h Pchome').id,
+      name: '黑可可巧克力酥片',
+      size: '280g',
+      url:  'https://24h.pchome.com.tw/prod/DBACCR-A75927459'
+    })
+
+
   end
 end

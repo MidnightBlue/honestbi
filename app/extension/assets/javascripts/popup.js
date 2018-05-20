@@ -9,12 +9,22 @@ function setDOMInfo(info) {
     for (let i=0; i<name_elements.length; i++) {
         name_elements[i].textContent = info.name;
     }
-
+    document.getElementById('image_url').src = info.image_url;
     document.getElementById('size').textContent = info.size;
     document.getElementById('price').textContent        = 'NT $' + info.honestbee_price;
     let difference = info.price - info.honestbee_price;
-    document.getElementById('difference').textContent   = '(節省' +  difference+ ' 元)';
-    document.getElementById('image_url').src = info.image_url;
+
+    if (difference >= 0) {
+        document.getElementsByClassName('is-cheap')[0].style.display = 'flex';
+        document.getElementsByClassName('is-expensive')[0].style.display = 'none';
+        document.getElementById('difference').textContent   = '(節省' + difference + ' 元)';
+
+    } else {
+        document.getElementsByClassName('is-cheap')[0].style.display = 'none';
+        document.getElementsByClassName('is-expensive')[0].style.display = 'flex';
+        document.getElementById('difference').textContent   = '(貴' + Math.abs(difference) + ' 元)';
+    }
+
 }
 
 window.addEventListener('DOMContentLoaded', function () {
