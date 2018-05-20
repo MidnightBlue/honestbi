@@ -35,7 +35,7 @@ Environment.ApiServer = class {
         let options = {
             method: 'POST',
             url:    this.url_for('/page_views'),
-            async:  true,
+            async:  false,
             data:   params.join('&')
         };
         return Utility.request(options, callback);

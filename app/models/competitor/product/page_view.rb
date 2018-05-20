@@ -18,24 +18,24 @@ class Competitor::Product::PageView < ApplicationRecord
   include SpreeeedEngine::Models::Competitor::Product::PageView
   include SpreeeedEngine::Datatables::Competitor::Product::PageView
 
-  def difference(to=:mapping_product)
+  def diff(to=:mapping_product)
     result = ActiveSupport::OrderedHash.new
-    result[:difference] = ActiveSupport::OrderedHash.new
+    result[:diff] = ActiveSupport::OrderedHash.new
 
     case to
     when :mapping_product
-      result[:difference][:name]            = product.honestbee_product.title
-      result[:difference][:image_url]       = product.honestbee_product.image_url
-      result[:difference][:size]            = product.honestbee_product.size
-      result[:difference][:honestbee_price] = product.honestbee_product.price
-      result[:difference][:price]           = price
+      result[:diff][:name]            = product.honestbee_product.title
+      result[:diff][:image_url]       = product.honestbee_product.image_url
+      result[:diff][:size]            = product.honestbee_product.size
+      result[:diff][:honestbee_price] = product.honestbee_product.price
+      result[:diff][:price]           = price
     when :last_page_view
       last_page_view = product.page_views.where('id < ?', id).first
 
       return result unless last_page_view.present?
 
       if last_page_view.price != price
-        result[:difference][:price] = price - last_page_view.price
+        result[:diff][:price] = price - last_page_view.price
       end
     else
 
@@ -47,7 +47,7 @@ class Competitor::Product::PageView < ApplicationRecord
 
 
   def as_json(options={})
-    super.merge(difference)
+    super.merge(diff)
   end
 
 end
