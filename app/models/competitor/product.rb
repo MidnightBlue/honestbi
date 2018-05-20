@@ -16,7 +16,7 @@ class Competitor::Product < ApplicationRecord
   self.table_name = 'competitor_products'
 
   belongs_to :competitor
-  belongs_to :honestbee_product, class_name: '::Product', foreign_key: 'mapping_product_id'
+  belongs_to :honestbee_product, class_name: '::Product', foreign_key: 'mapping_product_id', optional: true
   has_many   :page_views, class_name: 'Competitor::Product::PageView', foreign_key: 'product_id', dependent: :destroy
 
   include SpreeeedEngine::Models::Competitor::Product

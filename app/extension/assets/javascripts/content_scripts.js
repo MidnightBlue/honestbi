@@ -36,7 +36,7 @@ window.onload = function() {
                     let domInfo = {
                         name: '鱈魚香絲',
                         size: '600g',
-                        image_url: 'https://assets.honestbee.com/products/images/480/cf_cf0009719_cf0009719-1.jpg"',
+                        image_url: 'https://assets.honestbee.com/products/images/480/cf_cf0009719_cf0009719-1.jpg',
                         honestbee_price: 106,
                         price: 399,
                     };

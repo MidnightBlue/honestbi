@@ -5,7 +5,11 @@
 'use strict';
 
 function setDOMInfo(info) {
-    document.getElementById('name').textContent = info.name;
+    let name_elements = document.getElementsByClassName('_name');
+    for (let i=0; i<name_elements.length; i++) {
+        name_elements[i].textContent = info.name;
+    }
+
     document.getElementById('size').textContent = info.size;
     document.getElementById('price').textContent        = 'NT $' + info.honestbee_price;
     let difference = info.price - info.honestbee_price;
